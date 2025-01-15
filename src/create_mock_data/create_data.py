@@ -20,10 +20,10 @@ def generate_candidates(num):
     
 generate_candidates(100)
 
-def generate_company():
-    company_name = fake.company()
-    company_postcode = get_london_postcodes(1)[0]
-    return company_name, company_postcode
+def generate_employer():
+    employer_name = fake.employer()
+    employer_postcode = get_london_postcodes(1)[0]
+    return employer_name, employer_postcode
 
 
 
