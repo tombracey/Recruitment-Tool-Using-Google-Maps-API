@@ -12,17 +12,17 @@ maps = googlemaps.Client(key=api_key)
 company = generate_company()
 candidates_csv_path = 'data/mock_candidates.csv'
 
-def optimise_recruitment(company=company, candidates_csv=candidates_csv_path, just_travel_time=False):
-    company_pc = company[1]
+def find_suitable_candidates(company=company, candidates_csv=candidates_csv_path, just_travel_time=False):
+    company_postcode = company[1]
     departure_time = datetime(2025, 1, 15, 8, 0)
 
     df = pd.read_csv(candidates_csv)
 
     travel_times = []
     
-    for postcode in df['Postcode']:
+    for candidate_postcode in df['Postcode']:
         try:
-            request = maps.directions(postcode, company_pc, mode="transit", departure_time=departure_time)
+            request = maps.directions(candidate_postcode, company_postcode, mode="transit", departure_time=departure_time)
             travel_time = request[0]['legs'][0]['duration']['text']
             travel_times.append(travel_time)
         except:
@@ -54,4 +54,4 @@ def optimise_recruitment(company=company, candidates_csv=candidates_csv_path, ju
         f.write(f"Candidate analysis:\n\n")
         f.write(df.to_markdown(index=False))
 
-optimise_recruitment(just_travel_time=True)
+find_suitable_candidates(company=('Kirbys AFX', 'W7 3QP'))
