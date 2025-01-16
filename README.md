@@ -104,6 +104,6 @@ find_suitable_candidates(employer = ('My Company Ltd.', 'SW1A 2AA'), candidates_
 
 **The overall suitability algorithm can easily be changed**
 
-The algorithm to create the overall suitability column is on lines 45-46 of `src/main.py`. The metrics involved and their weighting can easily be changed on these lines.
+The algorithm to create the overall suitability column is on lines 45-46 of `src/main.py`. The metrics involved and their weighting can easily be changed.
 
-If there are no columns matching the algorithm, like a CSV with just names and postcodes, the final table will omit the overall suitability column and instead sort rows by travel time in ascending order.
+If there are no columns matching the algorithm, like a CSV with just names and postcodes, the final table will omit the overall suitability column, and instead sort rows by travel time in ascending order.
