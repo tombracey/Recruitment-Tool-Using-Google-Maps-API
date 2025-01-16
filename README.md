@@ -1,13 +1,14 @@
 # Recruitment Tool Using Google Maps API
 
 ## Contents
-1. [Overview](#overview)  
-   - [Creating Mock Data](#creating-mock-data)  
-   - [Matching Candidates with Employers](#matching-candidates-with-employers)  
-2. [How to Use](#how-to-use)  
-   - [Set Up Dependencies](#set-up-dependencies)  
-   - [Match the Mock Candidates](#match-the-mock-candidates)  
-   - [Customise Candidate Matching](#customise-candidate-matching)  
+1. [Overview](#overview)
+   - [Creating Mock Data](#creating-mock-data)
+   - [Matching Candidates with Employers](#matching-candidates-with-employers)
+2. [How to Use](#how-to-use)
+   - [Set Up Dependencies](#set-up-dependencies)
+   - [Match the Mock Candidates](#match-the-mock-candidates)
+   - [Customise Candidate Matching](#customise-candidate-matching)
+
 
 ## Overview
 
@@ -35,10 +36,12 @@ This allowed me to create names and addresses for employers, and familiar-lookin
 
 ### Matching Candidates with Employers
 
-In `src/main.py`, the find_suitable_candidates function makes an API request to Google for each candidate postcode to find how long it would take them to get to work at 8am. In rare cases where Google Maps can't find a postcode (happened once in development), the row will be removed and the postcode logged.
+In `src/main.py`, the find_suitable_candidates function makes an API request to Google for each candidate postcode to find how long it would take them to get to work at 8am. In rare cases where Google Maps can't find a postcode (happened once in development), the row will be removed and the postcode logged. The API response is reformatted to an integer of the number of minutes, so it can be used for analysis.
 
-The API response is reformatted to an integer of the number of minutes, so it can be used for analysis. An 'Overall Suitability' column is created to aggregate the candidate's qualifications, communication and proximity.
-
+An 'Overall Suitability' column is created to aggregate the candidate's qualifications, communication and proximity. The formula used is:
+```
+df['Overall Suitability'] = ((df['Qualifications/10'] + df['Communication/5'] + (60 - df['Travel Time (mins)']) / 4) / 30 * 100)
+```
 The resulting data at `data/final_table.md` looks like this, with the most suitable candidates at the top:
 
 <img src="data/images/final_table.png" width="650">
