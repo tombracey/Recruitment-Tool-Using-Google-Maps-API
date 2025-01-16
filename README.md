@@ -12,7 +12,7 @@
 
 ## Overview
 
-The Google Maps API allows developers to integrate Google Maps features into software applications. Companies like Uber, Lyft, Amazon, and FedEx make millions of API calls daily to optimize routes and travel times.
+The Google Maps API allows developers to integrate Google Maps features into software applications. Companies like Uber, Lyft, Amazon, and FedEx make millions of API calls daily to optimise routes and travel times.
 
 A lot of advanced commercial recruitment software also use Google Maps API to find accurate travel times between employers and candidates. This is particularly important with a large candidate pool in a city like London, where public transport travel times can vary significantly depending on available routes. However, I used to use less optimised software and spend time manually punching in postcodes on Google Maps and noting the travel time on paper or a spreadsheet.
 
