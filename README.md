@@ -16,7 +16,7 @@ The Google Maps API allows developers to integrate Google Maps features into sof
 
 A lot of advanced commercial recruitment software also use Google Maps API to find accurate travel times between employers and candidates. This is particularly important with a large candidate pool in a city like London, where public transport travel times can vary significantly depending on available routes. However, I used to use less optimised software and spend time manually punching in postcodes on Google Maps and noting the travel time on paper or a spreadsheet.
 
-This repo aims to demonstrate how even a small recruitment operation could benefit from using Google Maps API, and how manual work I used to do regularly could have been automated for free. Google Cloud Platform allows $200 worth of free services every month, which is equivalent to 40,000 API calls.
+This repo aims to demonstrate how even a small recruitment agency could benefit from using Google Maps API, and how manual work I used to do regularly could have been automated for free. Google Cloud Platform allows $200 worth of free services every month, which is equivalent to 40,000 API calls.
 
 The 'find_suitable_candidates' function in `src/main.py` takes any employer details and CSV of job candidates and finds the public transport travel time between them. Where applicable, it aggregates travel time data with other metrics to create an 'overall suitability' percentage for the job. 100% would be the [perfect candidate](https://www.linkedin.com/in/tom-bracey-256337252/), with anyone over 50% probably worth contacting.
 
