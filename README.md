@@ -36,7 +36,7 @@ This allowed me to create names and addresses for employers, and familiar-lookin
 
 ### Matching Candidates with Employers
 
-In `src/main.py`, the find_suitable_candidates function makes an API request to Google for each candidate postcode to find how long it would take them to get to work at 8am. In rare cases where Google Maps can't find a postcode (happened once in development), the row will be removed and the postcode logged. The API response is reformatted to an integer of the number of minutes, so it can be used for analysis.
+In `src/main.py`, the find_suitable_candidates function makes an API request to Google for each candidate postcode to find how long it would take them to get to work assuming they leave at 8:00am. In rare cases where Google Maps can't find a postcode (happened once in development), the row will be removed and the postcode logged. The API response is reformatted to an integer of the number of minutes, so it can be used for analysis.
 
 An 'Overall Suitability' column is created to aggregate the candidate's qualifications, communication and proximity. The formula used is:
 ```
