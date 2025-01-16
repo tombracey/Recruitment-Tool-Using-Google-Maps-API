@@ -36,7 +36,7 @@ This allowed me to create names and addresses for employers, and familiar-lookin
 
 ### Matching Candidates with Employers
 
-In `src/main.py`, the find_suitable_candidates function makes an API request to Google for each candidate postcode to find how long it would take them to get to work assuming they leave at 8:00am. In rare cases where Google Maps can't find a postcode (happened once in development), the row will be removed and the postcode logged. The API response is reformatted to an integer of the number of minutes, so it can be used for analysis.
+In `src/main.py`, the find_suitable_candidates function makes an API request to Google for each candidate to find how long it would take them to get to work, assuming they leave at 8:00am. In rare cases where Google Maps can't find a postcode (happened once in development), the row will be removed and the postcode logged. The API response is reformatted to an integer of the number of minutes, so it can be used for analysis.
 
 An 'Overall Suitability' column is created to aggregate the candidate's qualifications, communication and proximity. The formula used is:
 ```
@@ -71,14 +71,14 @@ The resulting data at `data/final_table.md` looks like this, with the most suita
     pip install -r requirements.txt
     ```
 
-### Create a New Set of Mock Candidates:
+### Create a New Set of Mock Candidates
 ```
 python src/create_mock_data/create_data.py
 ```
 
 Running this file will generate a table of 100 new candidates, which can be viewed in `data/mock_candidates.csv` and used to test the find_suitable_candidates function.
 
-### Match the Mock Candidates:
+### Match the Mock Candidates
 
 1. If you don't already have a Google Cloud Platform account, set one up to obtain an API key.
 2. Export your API key as an environment variable:
