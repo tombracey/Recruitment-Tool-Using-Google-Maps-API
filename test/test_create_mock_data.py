@@ -1,8 +1,6 @@
-import pytest
 from src.create_mock_data.get_london_postcodes import get_london_postcodes
 from src.create_mock_data.create_data import generate_candidates, generate_employer
 
-@pytest.mark.skip
 class TestGetLondonPostcodes:
 
     def test_postcode_format(self):
